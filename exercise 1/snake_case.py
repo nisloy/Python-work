@@ -6,7 +6,7 @@ for char in input_string:
     word.append(char)
 for x in range (len(word)):
     if word[x].isupper():
-        index=x#here it assigns x as the index where there is acapital letter
+        index=x
         print(index)
         break
 for y in range(index):

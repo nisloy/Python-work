@@ -1,18 +1,16 @@
-accepted_coins=[25,10,5]
-entered_coin=int(input("Enter a coin to have your soda"))
-amount=0
-if entered_coin not in accepted_coins:
-     print("You must enter an allowed coin")
-amount+=entered_coin
 
-while amount<50:
-    enter_another_coin=int(input("Enter a new coin to fit amount"))
-    if entered_coin not in accepted_coins:
-        print("You must enter an allowed coin")
+amount_due=50
+total_inserted=0
+print("Welcome to coca cola machine")
+print("You must inly enter 50, 25, 5 coins")
+while total_inserted< amount_due:
+    amount=amount_due-total_inserted
+    print("Yor Left with this Amount to grab your COCA-COLA",amount)
+    coin=int(input("Please enter a allowed coin: "))
+    if coin==5  or coin==10 or coin==25:
+        total_inserted=total_inserted+coin
     else:
-        amount+=enter_another_coin
-if amount==50:
-    print("You have got your soda now ")
-while amount>50:
-    change=amount-50
-    print(f"Your amoiunt have exceede here is your change of {str(change)}")
+        print("Please enter only allowed coin?")
+if total_inserted>50:
+    change=total_inserted-amount_due
+    print("Your change is ",change)
